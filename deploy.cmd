@@ -102,16 +102,19 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   pushd "%DEPLOYMENT_TARGET%"
   call :ExecuteCmd !NPM_CMD! install --production
   IF !ERRORLEVEL! NEQ 0 goto error
-)
-
-:: 4. Set up Angular 2
-IF EXIST "%DEPLOYMENT_TARGET%\angular-cli.json" (
-  pushd "%DEPLOYMENT_TARGET%"
-  call :ExecuteCmd ./node_modules/.bin/ng build --prod
-  IF !ERRORLEVEL! NEQ 0 goto error
-  pushd "/dev/null"
   popd
 )
+
+echo Handling Angular build   
+    :: 4. Build ng app
+    IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
+      pushd "%DEPLOYMENT_TARGET%"
+      call :ExecuteCmd "!NODE_EXE!" ./node_modules/@angular/cli/bin/ng build --prod --env=prod --aot
+      :: the next line is optional to fix 404 error see section #8
+      call :ExecuteCmd cp "%DEPLOYMENT_TARGET%"/web.config "%DEPLOYMENT_TARGET%"/dist/
+      IF !ERRORLEVEL! NEQ 0 goto error
+      popd
+    )
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 goto end
 
