@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
+import {NgsRevealModule} from 'ng2-scrollreveal';
+
 
 
 import { AppComponent } from './app.component';
@@ -20,6 +22,7 @@ import { routing } from './app.routes';
     BrowserModule,
     HttpModule,
     Ng2PageScrollModule,
+    NgsRevealModule.forRoot(),
     BrowserAnimationsModule,
     JsonpModule,
     routing
