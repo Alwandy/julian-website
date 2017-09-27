@@ -30,24 +30,49 @@ p {
   font-size: 15px; 
 }
 
-.bg > p {
+.content-container > p {
   text-shadow: 1px 1px 1px #000;  
 }
 
-.bg { 
-  /* The image used */
+.img-container {
   background-image: url("../images/banner.jpg");
-
-  /* Full height */
-  height: 100%; 
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
+  position: absolute;
+  height: 100%;
+  width: 120%;
+  -webkit-filter: blur(5px);
+  -o-filter: blur(5px);
+  filter: blur(5px);
   background-size: cover;
-  box-shadow:inset 0 0 0 2000px rgba(54, 41, 41, 0.3);
-  
-
+  overflow: hidden;
+  left:-5%;
 }
+
+.content-container {
+  width: 100%;
+  height: 900px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+
+
+
+.img-business {
+  background-image: url("../images/google.jpg");
+  position: absolute;
+  height: 100%;
+  width:100%;
+  -webkit-filter: blur(5px);
+  -o-filter: blur(5px);
+  filter: blur(5px);
+  background-size: cover;
+  overflow: hidden;
+}
+
 
 .bottom {    
   position: absolute;

@@ -36,9 +36,10 @@
 
   <!--- Portfolio -->
 
-  <div class="container-fluid" style="background-color: #eee;">
+  <div class="container-fluid" style="background-color: #eee;  position: relative; overflow: hidden; color:white;">
+        <div class="img-container"></div>            
+        
       <section id="portfolio" [ngsReveal]="{ reset: true}">
-          
       <h1 class="text-center" style="padding-top:50px">Portfolio</h1>
       <p class="text-center">Some projects I've created:</p>
       <div class="row">
@@ -96,8 +97,9 @@
 
 
  <!-- Business -->
-<div class="container-fluid" style="background-color: #eee;">
-    <section id="inquiries" [ngsReveal]="{ reset: true}">
+<div class="container-fluid" style="background-color: #eee;   position: relative; overflow: hidden;">
+        <div class="img-business"></div>
+        <section id="inquiries" [ngsReveal]="{ reset: true}">
   <h1 class="text-center" style="padding-top:50px">Business inquiries</h1>
   <div class="text-center">      
 <a href="mailto:me@alwandy.me"> <button type="button" class="btn btn-primary" style="margin-bottom:30px; text-align:center;">Contact me</button></a>
